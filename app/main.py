@@ -40,4 +40,8 @@ def read_root():
 
 @app.get("/health")
 def health_check():
-    return {"status": "healthy"} 
+    return {
+        "status": "healthy",
+        "version": os.getenv("API_VERSION", "v1"),
+        "app_name": os.getenv("APP_NAME", "FastAPI Backend")
+    } 

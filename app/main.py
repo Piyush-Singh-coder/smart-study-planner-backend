@@ -22,6 +22,7 @@ app.add_middleware(
         "http://localhost:5173",  # Vite dev server
         "http://localhost:3000",  # React dev server
         "https://smart-study-planner.netlify.app",  # Production frontend
+        "https://682b8e5d01550a0092c46feb--smartstudyplann.netlify.app",  # New Netlify preview
         "https://*.netlify.app"  # Any Netlify subdomain
     ],
     allow_credentials=True,

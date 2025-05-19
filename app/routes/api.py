@@ -21,7 +21,7 @@ def get_user(user_id: int):
 def create_user(user: User):
     return UserController.create_user(user)
 
-@router.post("/study-plan", response_model=StudyPlanResponse)
+@router.post("/v1/study-plan", response_model=StudyPlanResponse)
 def generate_study_plan(plan_request: StudyPlanRequest):
     """
     Generate a personalized study plan based on subjects, exam dates, and available hours.

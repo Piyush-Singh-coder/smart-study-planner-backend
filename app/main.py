@@ -28,7 +28,7 @@ app.add_middleware(
 app.add_middleware(LoggingMiddleware)
 
 # Include routes
-app.include_router(router, prefix=f"/api/{os.getenv('API_VERSION', 'v1')}")
+app.include_router(router, prefix="/api")
 
 @app.get("/")
 def read_root():

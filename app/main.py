@@ -10,7 +10,9 @@ load_dotenv()
 
 app = FastAPI(
     title=os.getenv("APP_NAME", "FastAPI Backend"),
-    version=os.getenv("API_VERSION", "v1")
+    version=os.getenv("API_VERSION", "v1"),
+    docs_url="/docs",
+    redoc_url="/redoc"
 )
 
 # Add CORS middleware
@@ -34,4 +36,8 @@ def read_root():
         "message": "Hello World from FastAPI!",
         "app_name": os.getenv("APP_NAME", "FastAPI Backend"),
         "version": os.getenv("API_VERSION", "v1")
-    } 
+    }
+
+@app.get("/health")
+def health_check():
+    return {"status": "healthy"} 
